@@ -8,7 +8,7 @@ from concurrent.futures import ThreadPoolExecutor
 from aiohttp import ClientTimeout, ClientSession
 
 timeout_seconds = timedelta(seconds=15).total_seconds()
-
+#Imported snippet
 class Result(Enum):
     Accepted = 1
     Rejected = 2
@@ -48,8 +48,7 @@ async def read_data(executor: ThreadPoolExecutor) -> Event:
 async def send_data(dest: Address, payload: Payload) -> Result:
     try:
 
-        # Имитация блокирующей операции отправки
-
+        # Imitation of blocking sending operation
         timeout = ClientTimeout(total=timeout_seconds)
 
         async with ClientSession(timeout=timeout) as session:
